@@ -1,0 +1,12 @@
+header {
+  display:flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  padding-top: 100px;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+  color: black;
+}
