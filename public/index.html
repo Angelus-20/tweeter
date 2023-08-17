@@ -11,7 +11,6 @@
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -25,6 +24,8 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.3/jquery.timeago.min.js"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -54,36 +55,21 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
 
-      </form>
+
+      <div class="error-message"></div>
       <section class="new-tweet">
-        <form action="/tweets/" method="POST">
+        <form action="/tweets" method="POST" autocomplete="off">
           <label>What are you humming about?</label>
-          <input type="text" id="tweet-text" name="tweetContent">
+          <input type="text" id="tweet-text" name="text">
           <hr class="divider">
           <div class="counter-container">
             <button type="submit" class="tweet-button">Tweet</button>
             <output name="counter" class="counter" id="tweet-counter">140</output>
           </div>
-          </section>
-          <section>
-            <article class="tweet">
-              <header class="tweet-header">
-                <img src="/images/profile-hex.png">
-                <h3>Angelus</h3>
-                <span>@Angelus</span>
-              </header>
-              <div class="tweet-content">
-                <p>This is the content of the tweet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-              <footer class="tweet-footer">
-                <span><i class="far fa-solid fa-comment"></i> 5</span>
-                <span><i class="fas fa-retweet"></i> 10</span>
-                <span><i class="far fa-solid fa-heart"></i> 15</span>
-                <span><i class="fas fa-share"></i></span>
-              </footer>
-            </article>
-          </section>
         </form>
+      </section>
+      <section id="tweetmsg">
+      </section>
     </main>
   </div>
 </body>

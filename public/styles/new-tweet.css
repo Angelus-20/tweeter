@@ -2,13 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 200px;
   width: 700px;
   padding: 20px;
   margin: 10px;
   border: 1px solid #ccc;
   background-color: white;
+  max-height: 200px; /* Set a maximum height */
+  overflow-y: auto; /* Add vertical scrollbar when content overflows */
 }
+
+
 .tweet-controls {
   display: flex;
   justify-content: flex-end;
@@ -50,6 +53,8 @@ body {
 }
 
 .tweet {
+  height: 300px;
+  width: 700px;
   border: 1px solid #ccc;
   padding: 10px;
   margin: 10px;
@@ -70,7 +75,7 @@ i:hover{
   display: flex;
   align-items: flex-start;
   height: auto;
-  
+  padding: 20px;
 }
 
 .tweet-header img {
@@ -84,7 +89,7 @@ i:hover{
   margin: 0;
 }
 
-.tweet-header span {
+h4, .tweet-header span {
   color: #4056A1;
 }
 
@@ -109,3 +114,14 @@ i:hover{
   margin-right: 5px;
 }
 
+.error-message {
+  display: none;
+  height: 50px;
+  width: auto;
+  background-color: rgb(255, 235, 235);
+  border: 1px solid red;
+  color: rgb(192, 0, 0);
+  font-size: 16px;
+  margin: 10px auto;
+  padding: 10px;
+}
