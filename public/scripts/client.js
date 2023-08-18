@@ -4,7 +4,7 @@ $(document).ready(function() {
   $('form').on('submit', function(event) {
     event.preventDefault();
 
-    const tweetContent = $('#tweet-text').val();
+    const tweetContent = $('#tweet-text').val().trim();
     const remainingCharacters = 140 - tweetContent.length;
 
     if (!tweetContent) {
@@ -26,7 +26,6 @@ $(document).ready(function() {
       data: formData,
       success: function(response) {
         $('#tweet-text').val('');
-        updateCharacterCounter(); // Reset character counter
         console.log('Tweet successfully submitted:', response);
         displayTweets();
       },
@@ -36,14 +35,6 @@ $(document).ready(function() {
       }
     });
   });
-
-  function updateCharacterCounter() {
-    const tweetContent = $('#tweet-text').val();
-    const remainingCharacters = 140 - tweetContent.length;
-    const counterElement = $('#tweet-counter');
-
-    counterElement.text(remainingCharacters);
-  }
 
   function showError(message) {
     errorMessage.text(message).slideDown();
@@ -65,31 +56,40 @@ $(document).ready(function() {
       }
     });
   }
+  displayTweets();
 
   const createTweetElement = function(tweet) {
     let timeStamp = $.timeago(tweet.created_at);
-      const $tweet = $(`
+    const $tweet = $(`
         <article class="tweet">
           <header class="tweet-header">
+          <div>
             <img src="${tweet.user.avatars}" alt="User Avatar">
             <h3>${$("<div>").text(tweet.user.name).html()}</h3>
+            </div>
+            <div class="handle">
             <span>${$("<div>").text(tweet.user.handle).html()}</span>
-          </header>
-          <div class="tweet-content">
+            </div>
+            </header>
+            <div class="tweet-content">
             <p>${$("<div>").text(tweet.content.text).html()}</p>
-          </div>
-          <footer class="tweet-footer">
+            </div>
+            <footer class="tweet-footer">
+            <div>
+            <span class="time">${timeStamp}</span>
+            </div>
+            <div class="icons">
             <span><i class="far fa-solid fa-comment"></i> 5</span>
             <span><i class="fas fa-retweet"></i> 10</span>
             <span><i class="far fa-solid fa-heart"></i> 15</span>
-            <span><i class="fas fa-share"></i></span>
-            <span class="time">${timeStamp}</span>
-          </footer>
+            <span><i class="fas fa-share"></i></span> 
+            </div>
+            </footer>
         </article>
       `);
-      //$('#tweetmsg').empty(); 
-      return $tweet;
-    };
+    //$('#tweetmsg').empty(); 
+    return $tweet;
+  };
 
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {

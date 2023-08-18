@@ -5,7 +5,7 @@
   max-height: 200px;
   width: 700px;
   padding: 20px;
-  margin: 120px 0 0 0;
+  margin: 70px 0 0 0;
   border: 1px solid #ccc;
   background-color: white;
 }
@@ -17,12 +17,14 @@
   margin-top: 10px;
 }
 
-.new-tweet input[type="text"] {
+
+textarea {
   width: 650px;
-  padding: 10px 10px;
+  padding: 5px 10px;
   box-sizing: border-box;
   border: none;
   outline: none;
+  resize: none;
 }
 
 .new-tweet button.tweet-button {
@@ -34,7 +36,8 @@
   font-family: "Bungee", sans-serif;
 }
 
-.counter, .counter-container {
+.counter,
+.counter-container {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -61,10 +64,10 @@ body {
 }
 
 .tweet:hover {
-  box-shadow: 0 0 11px rgba(0, 0, 0, 0.945); 
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.945);
 }
 
-i:hover{
+i:hover {
   color: rgba(0, 3, 170, 0.945);
   background-color: none;
 }
@@ -75,6 +78,8 @@ i:hover{
   align-items: flex-start;
   height: auto;
   padding: 20px;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .tweet-header img {
@@ -85,11 +90,17 @@ i:hover{
 }
 
 .tweet-header h3 {
-  margin: 0;
+  margin: 3px;
 }
 
-h4, .tweet-header span {
+h4,
+.tweet-header span {
   color: #4056A1;
+}
+
+.handle{
+  display: flex;
+  justify-content: flex-end;
 }
 
 .tweet-content {
@@ -98,15 +109,24 @@ h4, .tweet-header span {
 
 .tweet-footer {
   display: flex;
+  align-content: space-between;
   justify-content: space-between;
   color: #999;
-  margin-top: 10px;
+  margin-top: 35px;
   font-size: 70%;
+  flex-wrap: wrap;
+}
+
+.icons{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .tweet-footer span {
   display: flex;
   align-items: center;
+  margin: 5px;
 }
 
 .tweet-footer i {
@@ -116,11 +136,11 @@ h4, .tweet-header span {
 .error-message {
   display: none;
   height: 50px;
-  width: auto;
+  width: 260px;
   background-color: rgb(255, 235, 235);
   border: 1px solid red;
   color: rgb(192, 0, 0);
   font-size: 16px;
-  margin: 10px auto;
+  margin: 70px 0 0 0;
   padding: 10px;
 }
