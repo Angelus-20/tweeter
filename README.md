@@ -9,8 +9,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 !["screenshot of Main tweeter Mobile page"](https://github.com/Angelus-20/tweeter/blob/master/docs/Tweeter%20-%20main%20-%20Mobile.jpg?raw=true)
 !["screenshot of Main tweeter Desktop page"](https://github.com/Angelus-20/tweeter/blob/master/docs/tweeter-%20main%20-%20desktop.jpg?raw=true)
-!["screenshot of Main tweeter Mobile page"]()
-!["screenshot of Main tweeter Mobile page"]()
+!["screenshot of tweets tweeter Mobile page"](https://github.com/Angelus-20/tweeter/blob/master/docs/Tweeter%20-%20tweets%20-%20Mobile.jpg?raw=true)
+!["screenshot of tweets tweeter desktop page"](https://github.com/Angelus-20/tweeter/blob/master/docs/Tweeter%20-%20tweets%20-%20Desktop.jpg?raw=true)
 
 
 ## Getting Started
