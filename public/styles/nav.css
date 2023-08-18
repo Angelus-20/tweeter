@@ -2,7 +2,6 @@ nav {
   position: fixed;
   height: 100px;
   width: 100%;
-  background-color: #4056A1;
   color: #FFFFFF;
   font-family: "Bungee", sans-serif;
   padding: 0 1.5em;
@@ -30,4 +29,15 @@ nav, .tweetpost {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media only screen and (min-width: 1024px) {
+ nav{ 
+  background-color: #4056A1;
+ }
+
+ body{
+  display: flex;
+  flex-direction: row;
+ }
 }

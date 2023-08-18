@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -38,12 +39,12 @@
     <span>tweeter</span>
     <div>
       <span lass="tweetpost">Write a new tweet</span>
-      <i class="fa-solid fa-angles-down" data-id="arrow-icon"></i>
+      <i class="fa-solid fa-angles-down fa-bounce" data-id="arrow-icon"></i>
     </div>
   </nav>
   <header>
     <div>
-      <img src="/images/profile-hex.png">
+      <img src="/images/cool-icon.jpg">
     </div>
     <br>
     <div>
@@ -51,11 +52,8 @@
       <h4>@Angelus</h4>
     </div>
   </header>
-  <div>
     <!-- Page-specific (main) content here -->
     <main class="container">
-
-
       <div class="error-message"></div>
       <section class="new-tweet">
         <form action="/tweets" method="POST" autocomplete="off">
@@ -71,7 +69,6 @@
       <section id="tweetmsg">
       </section>
     </main>
-  </div>
 </body>
 
 </html>

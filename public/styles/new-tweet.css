@@ -2,13 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  max-height: 200px;
   width: 700px;
   padding: 20px;
-  margin: 10px;
+  margin: 120px 0 0 0;
   border: 1px solid #ccc;
   background-color: white;
-  max-height: 200px; /* Set a maximum height */
-  overflow-y: auto; /* Add vertical scrollbar when content overflows */
 }
 
 
@@ -124,19 +123,4 @@ h4, .tweet-header span {
   font-size: 16px;
   margin: 10px auto;
   padding: 10px;
-}
-
-/* Mobile styles */
-@media screen and (max-width: 767px) {
-  /* Apply mobile-specific styles here */
-}
-
-/* Tablet styles */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  /* Apply tablet-specific styles here */
-}
-
-/* Desktop styles */
-@media screen and (min-width: 1025px) {
-  /* Apply desktop-specific styles here */
 }

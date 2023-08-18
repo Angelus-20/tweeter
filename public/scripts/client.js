@@ -87,14 +87,14 @@ $(document).ready(function() {
           </footer>
         </article>
       `);
-      $('#tweetmsg').empty();
+      //$('#tweetmsg').empty(); 
       return $tweet;
     };
 
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const $tweetElement = createTweetElement(tweet);
-      $('#tweetmsg').append($tweetElement);
+      $('#tweetmsg').prepend($tweetElement);
     }
   };
 });
