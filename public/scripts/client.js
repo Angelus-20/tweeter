@@ -1,17 +1,22 @@
 $(document).ready(function() {
+  // Select the error message element
   const errorMessage = $('.error-message');
 
+  // Handle form submission
   $('form').on('submit', function(event) {
     event.preventDefault();
 
+    // Get tweet content and calculate remaining characters
     const tweetContent = $('#tweet-text').val().trim();
     const remainingCharacters = 140 - tweetContent.length;
 
+    // Handle empty tweet content
     if (!tweetContent) {
       showError('Tweet content is required.');
       return;
     }
 
+    // Handle tweet content exceeding character limit
     if (remainingCharacters < 0) {
       showError('Tweet content is too long.');
       return;
@@ -19,6 +24,7 @@ $(document).ready(function() {
 
     hideError(); // Hide the error message if there is no error
 
+    // Serialize form data and send AJAX POST request
     const formData = $(this).serialize();
     $.ajax({
       url: '/tweets',
@@ -36,14 +42,17 @@ $(document).ready(function() {
     });
   });
 
+  // Display error message
   function showError(message) {
     errorMessage.text(message).slideDown();
   }
 
+  // Hide error message
   function hideError() {
     errorMessage.slideUp();
   }
 
+  // Fetch and display tweets
   function displayTweets() {
     $.ajax({
       url: '/tweets',
@@ -56,8 +65,11 @@ $(document).ready(function() {
       }
     });
   }
+
+  // Initialize by displaying existing tweets
   displayTweets();
 
+  // Create a tweet element
   const createTweetElement = function(tweet) {
     let timeStamp = $.timeago(tweet.created_at);
     const $tweet = $(`
@@ -87,10 +99,10 @@ $(document).ready(function() {
             </footer>
         </article>
       `);
-    //$('#tweetmsg').empty(); 
     return $tweet;
   };
 
+  // Render tweets by adding them to the container
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const $tweetElement = createTweetElement(tweet);
