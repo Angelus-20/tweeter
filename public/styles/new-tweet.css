@@ -55,7 +55,7 @@ body {
 }
 
 .tweet {
-  height: 300px;
+  height: fit-content;
   width: 700px;
   border: 1px solid #ccc;
   padding: 10px;
@@ -104,23 +104,28 @@ h4,
 }
 
 .tweet-content {
+  max-height: 90px;
+  max-width: auto;
   margin-top: 10px;
 }
+
 
 .tweet-footer {
   display: flex;
   align-content: space-between;
   justify-content: space-between;
   color: #999;
-  margin-top: 35px;
+  margin-top: 10px; /* Reduce the margin-top for better spacing */
   font-size: 70%;
   flex-wrap: wrap;
 }
 
-.icons{
+.icons {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 100%;
+  flex-direction: row;
 }
 
 .tweet-footer span {
@@ -131,7 +136,9 @@ h4,
 
 .tweet-footer i {
   margin-right: 5px;
+  font-size: 16px; /* Adjust the font size if necessary */
 }
+
 
 .error-message {
   display: none;

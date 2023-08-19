@@ -31,8 +31,9 @@ $(document).ready(function() {
       method: 'POST',
       data: formData,
       success: function(response) {
-        $('#tweet-text').val('');
         console.log('Tweet successfully submitted:', response);
+        $('#tweet-text').val('');
+        $('.counter').text(140);
         displayTweets();
       },
       error: function(error) {
@@ -102,8 +103,8 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  // Render tweets by adding them to the container
   const renderTweets = function(tweets) {
+    $('#tweetmsg').empty(); // Clear the container before rendering
     for (const tweet of tweets) {
       const $tweetElement = createTweetElement(tweet);
       $('#tweetmsg').prepend($tweetElement);
